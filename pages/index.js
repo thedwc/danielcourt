@@ -28,7 +28,7 @@ export default function Home({ work }) {
         <title>Daniel Court | Senior Front End Developer</title>
       </Head>
       <section className={styles.welcome}>
-        <div className={styles.inner}>
+        <div className="container">
           <p className={styles.welcome__intro}>
             Hi, I'm a Senior Front End Developer based in London.
           </p>

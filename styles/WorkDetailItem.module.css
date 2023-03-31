@@ -1,0 +1,14 @@
+.item__title {
+  margin-top: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.item__value {
+  margin-top: 10px;
+}
+
+.item__value a {
+  color: #2a4d69;
+}

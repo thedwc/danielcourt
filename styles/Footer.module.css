@@ -1,22 +1,18 @@
-.mainFooter {
-  padding: 40px 20px;
+.footer {
   background: #2a4d69;
-  width: 100%;
+  padding: 40px 20px;
   text-align: center;
-}
-
-.mainFooter__title {
-  line-height: 26px;
-  margin-bottom: 22px;
-  border-bottom: 2px solid #e7eff6;
-  padding: 4px 0;
-  display: inline-block;
-  color: #e7eff6;
-  font-weight: 600;
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
-  .mainFooter {
+  .footer {
     padding: 80px 0;
   }
+}
+
+.footer__title {
+  color: #e7eff6;
+  line-height: 26px;
+  margin-bottom: 22px;
 }

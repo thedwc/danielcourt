@@ -2,8 +2,8 @@ import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className={styles.mainFooter}>
-      <h2 className={styles.mainFooter__title}>Contact</h2>
+    <footer className={styles.footer}>
+      <h2 className={styles.footer__title}>Contact</h2>
       <p>
         Please contact me via email{" "}
         <a href="mailto:dwcourt@gmail.com">dwcourt@gmail.com</a> or{" "}

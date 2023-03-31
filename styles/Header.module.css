@@ -1,28 +1,28 @@
-.mainHeader {
-  width: 100%;
+.header {
   background: #2a4d69;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 40px 0;
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
-  .mainHeader {
+  .header {
     padding: 60px 0;
   }
 }
 
-.logo {
-  background: url(/logo.png) no-repeat;
-  background-size: contain;
-  display: block;
-  width: 200px;
+.header__logo {
+  background: center/ contain url(/logo.png) no-repeat;
   height: 103px;
   text-indent: -9999em;
-  margin: 0 auto;
+  width: 200px;
 }
 
 @media only screen and (min-width: 768px) {
-  .logo {
-    width: 300px;
+  .header__logo {
     height: 155px;
+    width: 300px;
   }
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../styles/WorkItem.module.css";
 import Head from "next/head";
+import WorkDetailItem from "../../components/WorkDetailItem";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -21,7 +22,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -31,6 +32,15 @@ export async function getStaticProps({ params }) {
     "fields.slug": params.slug,
   });
 
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
       work: items[0],
@@ -39,7 +49,15 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default function RecipeDetails({ work }) {
+export default function WorkDetails({ work }) {
+  if (!work) {
+    return (
+      <section className={styles.list}>
+        <div className="container">Loading...</div>
+      </section>
+    );
+  }
+
   const {
     title,
     introduction,
@@ -58,7 +76,7 @@ export default function RecipeDetails({ work }) {
         <title>{pageTitle}</title>
       </Head>
       <section className={styles.introduction}>
-        <div className={styles.inner}>
+        <div className="container">
           <h1>{title}</h1>
           {introduction && (
             <p className={styles.introduction__text}>{introduction}</p>
@@ -67,40 +85,16 @@ export default function RecipeDetails({ work }) {
         </div>
       </section>
       <section className={styles.list}>
-        <div className={styles.inner}>
-          {role && (
-            <div className={styles.item}>
-              <div className={styles.item__title}>Role</div>
-              <div className={styles.item__value}>{role}</div>
-            </div>
-          )}
-          {tech && (
-            <div className={styles.item}>
-              <div className={styles.item__title}>CMS</div>
-              <div className={styles.item__value}>{tech}</div>
-            </div>
-          )}
-          {agency && (
-            <div className={styles.item}>
-              <div className={styles.item__title}>Agency</div>
-              <div className={styles.item__value}>{agency}</div>
-            </div>
-          )}
-          {url && (
-            <div className={styles.item}>
-              <div className={styles.item__title}>URL</div>
-              <div className={styles.item__value}>
-                <a href={`http://${url}`} target="_blank">
-                  {url}
-                </a>
-              </div>
-            </div>
-          )}
+        <div className="container">
+          {role && <WorkDetailItem title="Role" value={role} />}
+          {tech && <WorkDetailItem title="CMS" value={tech} />}
+          {agency && <WorkDetailItem title="Agency" value={agency} />}
+          {url && <WorkDetailItem title="URL" value={url} hasLink="true" />}
         </div>
       </section>
       <section className={styles.screenshots}>
         <Image
-          className={styles.image}
+          className={styles.screenshots__image}
           src={`https:${screenshots[0].fields.file.url}`}
           width={screenshots[0].fields.file.details.image.width}
           height={screenshots[0].fields.file.details.image.height}
