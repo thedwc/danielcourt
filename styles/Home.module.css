@@ -1,0 +1,28 @@
+.welcome {
+  padding: 40px 0;
+  background: #4b86b4;
+  text-align: center;
+}
+
+.welcome__intro {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.inner {
+  max-width: 675px;
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .welcome {
+    padding: 80px 0;
+  }
+
+  .welcome__intro {
+    font-size: 26px;
+    line-height: 32px;
+  }
+}

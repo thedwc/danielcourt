@@ -1,0 +1,11 @@
+.grid {
+  background: #e7eff6;
+  color: #2a4d69;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
