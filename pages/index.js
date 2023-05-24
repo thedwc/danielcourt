@@ -30,14 +30,18 @@ export default function Home({ work }) {
       <section className={styles.welcome}>
         <div className="container">
           <p className={styles.welcome__intro}>
-            Hi, I'm a Senior Front End Developer based in London.
+            Hi, I'm Daniel Court, a Senior Front End Developer based in London.
           </p>
           <p>
-            My skills and experience include working with HTML5, CSS3, Less,
-            Sass, BEM, jQuery, JavaScript, React, Redux, ES6, Grunt, Webpack,
-            Git, Magento, Wordpress, Craft and Drupal. I also lead a team of
-            Front End Developers and have experience of working with, and
-            managing, freelancer developers as well as offshore developers.
+            My experiences include working on large scale ecommerce projects
+            across multiple markets right through to smaller brochure style CMS
+            sites, working on agile feature led projects, leading a team of
+            developers across multiple countries and line managing developers.
+          </p>
+          <p>
+            I've most recently been using the following technologies Javascript,
+            Vue, Vuex, Sass, BEM and Jest on a Optimizely CMS but I also have
+            experience using React, Redux, Magento, Craft and Wordpress.
           </p>
         </div>
       </section>
